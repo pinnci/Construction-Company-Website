@@ -1,0 +1,828 @@
+/*GENERAL*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.o-hidden{
+    overflow: hidden;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/*LIGHTBOX*/
+.lightbox{
+    display: none;
+    position: fixed;
+    z-index: 300;
+    padding-top: 2em;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.lightbox-content{
+    position: relative;
+    margin: 3em auto;
+    width: 50%;
+    max-width: 1000px;
+    background-color: black;
+}
+
+.slides{
+    border: .2em solid #f3bb28;
+    border-radius: 0.3em;
+}
+
+.slides img{
+    animation:galleryFade .4s ease-in-out;
+}
+
+.close{
+    font-size: 3em;
+    position: absolute;
+    right: 0.3em;
+    top: 0em;
+    color:#999;
+    transition: 0.3s ease-in-out;
+    z-index: 150;
+}
+
+.close:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.next,.prev{
+    position: absolute;
+    top: 50%;
+    padding: 0.8em;
+    margin-top: -1.5em;
+    color: white;
+    font-size: 1.5em;
+    transition: 0.3s ease;
+    z-index: 150;
+  }
+  
+  .next {
+      right: 0;
+      border-radius: 0.2em;
+    }
+  
+  .prev{
+      left: 0;
+      border-radius: 0.2em;
+  }  
+  
+  .prev:hover,.next:hover{
+      cursor: pointer;
+      background-color: rgba(0,0,0,0.7);
+  }
+
+/*HEADER*/
+header{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('../img/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 750px;
+}
+
+.logo{
+    float:left;
+}
+
+.logo h1{
+    color:white;
+    font-size: 1.8em;
+    font-weight: 100;
+}
+
+.menu{
+    float: right;
+}
+
+.menu ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 1em;
+}
+
+.menu ul{
+    padding-left: 0;
+}
+
+.menu a {
+    text-decoration:none;
+    color:white;
+    padding: 0.5em;
+}
+
+.menu a:hover{
+    color:#f3bb28;
+}
+
+/*POST HEADER*/
+.postheader{
+    background:rgba(0,0,0,0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 20;
+}
+
+.postheader .menu li{
+    padding: 0.2em 1em;
+}
+
+.postheader .logo{
+    font-size:0.8em;
+}
+
+/*MOBILE HEADER*/
+.mobile-header{
+    background: rgba(0,0,0,1);
+    display:none;
+    position: fixed;
+    width: 100%;
+}
+
+.mobile-header h1{
+    font-size: 2em;
+}
+
+/*MOBILE MENU*/
+
+.mobile-menu{
+    background-color: rgba(0,0,0,0.9);
+    position: fixed;
+    width: 100%;
+    height: auto;
+    padding: 1em 0;
+    top:5.3em;
+    left: 0;
+    display: none;
+    z-index: 300;
+}
+
+.mobile-menu ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.mobile-menu li{
+    margin: 2em 0;
+}
+
+.mobile-menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+#hamburger{
+    color:white;
+    float: right;
+}
+
+#x{
+    color:white;
+    float: right;
+}
+
+/*HERO*/
+.hero{
+    width: 100%;
+    height: 640px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.hero p:first-child{
+    background-color: #f3bb28;
+    display: inline-block;
+    padding: 0.6em;
+    border-radius: 0.25em;
+}
+
+.hero h1{
+    font-size: 4em;
+}
+
+.buttons a{
+    text-decoration: none;
+    color: white;
+    margin: 1em 0.5em;
+    padding: 0.6em;
+    border:0.1em solid white;
+    display: inline-block;
+}
+
+.buttons a:hover{
+    border: 0.1em solid #f3bb28;
+    background-color: #f3bb28;
+}
+
+/*POSTHERO*/
+.whatwedo{
+    margin:0 auto;
+    width: 100%;
+    padding: 2em 0 3em 0;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.housetext h2{
+    font-size:2.5em;
+}
+
+.housetext p{
+    font-size: 0.9em;
+    font-weight: 500;
+    width: 80%;
+}
+
+.housetext{
+    width: 35%;
+    text-align: left;
+    font-weight: 300;
+}
+
+.housetext,.houseimg{
+    width: 50%;
+}
+
+.yellow{
+    color:#f3bb28;
+}
+
+/*NUMBERS*/
+.numbers{
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('../img/numbersbg.jpg');
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+}
+
+.number{
+    width: 24%;
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.name{
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+/*CERTIFICATIONS*/
+.certifications{
+    width: 100%;
+    padding: 2em 0;
+    background:url('../img/certifications.png') no-repeat;
+    background-position: bottom;
+    background-size: 90%;
+}
+
+.certifications h2{
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+.certifications p{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.certificate{
+    width: 25%;
+    display: inline-block;
+    margin: 3em 0;
+    position: relative;
+}
+
+.certificate::after{
+    content:'';
+    position:absolute;
+    width:4em;
+    height:0.1em;
+    background:#f3bb28;
+    bottom:-1em;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+.certificate p{
+    width: 70%;
+    font-weight: 500;
+}
+
+.certificate h4{
+    font-weight: 600;
+}
+
+.icon-color{
+    color:#f3bb28;
+    font-size: 3em;
+}
+
+/*CONSULTANT*/
+.consultant{
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('../img/consultantbg.jpg');
+    width: 100%;
+    height: auto;
+    padding: 6em 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    color:white;
+}
+
+.consultant a{
+    text-decoration: none;
+    color:white;
+    padding: 0.5em;
+    border:0.1em solid #f3bb28;
+    border-radius: 0.2em;
+    transition: 0.1s ease-in-out;
+}
+
+.consultant a:hover{
+    background-color: #f3bb28;
+    color:white;
+}
+
+/*RECENT WORKS*/
+.works{
+    padding:1em 0 5em 0 ;
+}
+
+.works h2{
+    font-size: 2em;
+}
+
+.work-menu ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.work-menu a{
+    text-decoration: none;
+    color:black;
+    transition: 0.1s;
+    padding: 0.2em 0 ;
+}
+
+.selected{
+    border-bottom: 0.1em solid #f3bb28;
+}
+
+.work-menu li {
+    display: inline-block;
+    margin: 1em;
+}
+
+.work-menu a:hover{
+    color:#f3bb28;
+}
+
+.gallery-set img{
+    margin: 0.5em;
+    transition: 0.2s ease-in-out;
+    width: 20%;
+}
+
+.gallery-set img:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+/*PARTNERS*/
+.partners{
+    padding: 3em 0;
+}
+
+.partners h2{
+    font-size: 1.5em;
+    color:white;
+}
+
+.partners img{
+    width: 100px;
+    margin: 0 1em;
+}
+
+.partners{
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('../img/partnersbg.jpg') no-repeat;
+    background-size: cover;
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2em;
+}
+
+/*CONTACT*/
+.form{
+    width: 500px;
+    max-width: 100%;
+    padding: 1em 0 2em 0;
+    display: inline-block;
+}
+
+.form-photo{
+    width: 500px;
+    height: 400px;
+    background: url('../img/workers.png');
+    background-repeat: no-repeat;
+    background-size: 30em;
+    background-position: bottom;
+}
+
+form{
+    width: 100%;
+}
+
+label{
+    display: block;
+    text-align: left;
+    margin:0.5em 0;
+}
+
+input{
+    width: 100%;
+    padding:.3em;
+    margin-bottom: .5em;
+    border: 0.05em solid silver;
+    border-radius: 0.2em;
+    box-sizing: border-box;
+    font-size: 1.2em;
+}
+
+form a{
+    text-decoration: none;
+    width: 100%;
+    background-color: #f3bb28;
+    color:white;
+    display: inline-block;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 0.3em;
+    margin: 2em 0;
+    transition: .2s ease-in-out;
+}
+
+form a:hover{
+    background-color: #e6a909;
+}
+
+/*FOOTER*/
+footer{
+    background-color: #222;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    padding:2em 0;
+    margin-top: -1em;
+}
+
+.footer-content{
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    height: 10em;
+}
+
+.footer-menu{
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-menu li {
+    margin: 0.3em 0;
+}
+
+.footerh3{
+    font-weight: 500;
+}
+
+.logo-footer{
+    color: white;
+    font-weight: 100;
+}
+
+.footer-menu li a{
+    text-decoration: none;
+}
+
+.footer-menu li a:hover{
+    text-decoration: underline #f3bb28;
+}
+
+footer h3{
+    color:white;
+}
+
+footer a,footer p{
+    color:#ccc;
+}
+
+.icon{
+    font-size: 2.5em;
+    color:#ccc;
+    margin: 0 .1em;
+    transition: 0.2s ease-in-out;
+}
+
+.icon:hover{
+    cursor: pointer;
+    color:#f3bb28;
+}
+
+/*KEYFRAMES*/
+
+/*GALLERY SETS*/
+.displayNone{
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.gallery-set{
+    animation: galleryFade .4s ease-in-out;
+}
+
+@keyframes galleryFade{
+    from{
+        opacity: 0.3;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.houseimg2{
+    display:none;
+}
+
+/*MENU SLIDE*/
+.show{
+    display:block;
+    animation: showMenu .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showMenu{
+    from{
+        transform: translateX(-1270px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
+.hide{
+    display: block;
+    animation: hideMenu .5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideMenu{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(-1270px);
+    }
+}
+
+
+/*MEDIA QUERIES*/
+@media screen and (max-width:1265px){
+    /*header*/
+    .main-menu{
+        display:none;
+    }
+
+    .postheader{
+        display:none;
+    }
+
+    .mobile-header{
+        display: block;
+        z-index: 3000;
+    }
+
+    .hero p ,.hero a{
+        font-size: 1.4em;
+    }
+
+    .hero h1{
+        margin-top: 3em;
+    }
+
+    /*what we do*/
+    .whatwedo .box{
+        display: block;
+    }
+
+    .br{
+        display:none;
+    }
+
+    .housetext{
+        width: 100%;
+        text-align: left;
+        font-size: 1.3em;
+    }
+
+    .housetext p{
+        display:block;
+        text-align: left;
+    }
+
+    .houseimg{
+        display:none;
+    }
+
+    .houseimg2{
+        display:block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /*certifications & numbers & consultant*/
+    .certifications,.numbers,.consultant,.works,.partners,.contact,footer{
+        font-size: 120%;
+    }
+
+    /*contact*/
+    .form-photo{
+        display: none;
+    }
+
+    /*footer*/
+    .footer-content{
+        width: 33%;
+    }
+}
+
+@media screen and (max-width:835px){
+    /*header*/
+    .hero p{
+        font-size: 1.5em;
+    }
+    .whatwedo p{
+        font-size:1.15em;
+        width: 90%;
+    }
+
+    /*number*/
+    .number{
+        width: 44%;
+        margin: 1em 0;
+    }
+
+    /*certificate*/
+    .certificate{
+        width: 49%;
+    }
+
+    /*works*/
+    .gallery-set img{
+        width: 45%;
+    }
+
+    .partners img{
+        width: 130px;
+    }
+
+    /*footer*/
+    footer .box{
+        display:block;
+    }
+
+    .footer-content{
+        width: 100%;
+        text-align: left;
+    }
+
+    footer{
+        margin-top: 0;
+        padding:1.6em 0 0 0;
+    }
+}
+
+@media screen and (max-width:500px){
+    /*header*/
+    .hero h1,.hero p{
+        text-align: left;
+    }
+
+    /*what we do*/
+    .housetext h2{
+        font-size: 2em;
+        width: 100%;
+    }
+
+    .houseimg2 img{
+        width: 90%;
+    }
+    
+    /*certificate*/
+    .certificate{
+        width: 100%;
+    }
+
+    .certifications{
+        font-size: 130%;
+    }
+
+    /*consulant*/
+    .consultant h2{
+        font-size: 1.5em;
+    }
+
+    .consultant{
+        padding: 4em 0;
+    }
+
+    .consultant a{
+        display: none;
+    }
+
+    /*works*/
+    .works{
+        padding: 0 0 2em 0;
+    }
+
+    .work-menu li{
+        width: 47%;
+        margin: .5em  0;
+    }
+
+    /*gallery*/
+    .gallery-set img{
+        width: 100%;
+        margin: .5em 0;
+    }
+}
+
+@media screen and (max-width:390px){
+    .buttons a{
+        margin: 0 0.3em;
+    }
+
+    .hero h1{
+        margin-top: 1em;
+        font-size: 3.5em;
+    }
+
+    header{
+        height: 650px;
+    }
+
+    .whatwedo{
+        padding-top: 0;
+    }
+
+    .whatwedo h2{
+        font-size: 1.9em;
+    }
+
+    .whatwedo p {
+        font-size: 1em;
+    }
+}
